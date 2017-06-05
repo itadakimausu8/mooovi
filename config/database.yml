@@ -11,7 +11,7 @@
 development:
   adapter: mysql2
   encoding: utf8
-  database: mooovi6_development
+  database: mooovi6_development #開発用データベース名を変更
   pool: 5
   username: root
   password:
@@ -23,7 +23,7 @@ development:
 test:
   adapter: mysql2
   encoding: utf8
-  database: mooovi6_test
+  database: mooovi6_test #テスト用データベース名を変更
   pool: 5
   username: root
   password:
@@ -32,7 +32,7 @@ test:
 production:
   adapter: mysql2
   encoding: utf8
-  database: mooovi6_production
+  database: mooovi6_production #本番用データベース名を変更
   pool: 5
   username: root
   password:
