@@ -43,3 +43,4 @@ end
 
 # pry
 gem 'pry-rails'
+gem 'mechanize' #スクレイピングを実装を簡単にできるようにするために使うgem
