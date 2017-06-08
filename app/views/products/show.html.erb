@@ -14,7 +14,9 @@
                 <img src="<%= @product.image_url %>" alt="<%= @product.title %>">
               </p>
               <div style="text-align: right">
-                <a href="">この作品を投稿する</a>
+                <a href="/products/<%= @product.id %>/reviews/new">この作品を投稿する</a>
+                <!-- @product.idでクリックした映画のidを呼び出している。
+                aタグによってレビューの投稿画面へ飛ぶリンクになっている。 -->
               </div>
               <header class="header header--section">
                 <h2 class="text-middle">
@@ -22,19 +24,27 @@
                 </h2>
               </header>
               <ul style="padding: 0">
+              <% @product.reviews.each do |review| %>
+              <!-- @product.reviewsは詳細画面に対応した映画(クリックした映画)のレビューを配列で呼び出したものである。
+              この配列にeachメソッドをかけて要素を一つ一つ取り出す。 -->
                 <li style="border-bottom: dotted 1px">
                   <div class="thumbnail__caption">
-                    <h3 class="text-xsmall text-overflow" title="テスト太郎">
-                      </span>テスト太郎<small 2014=""></small>
+                    <h3 class="text-xsmall text-overflow" title="<%= review.nickname%>">
+                      </span><%= review.nickname%><small 2014=""></small>
+                      <!-- review.nicknameはreviewモデルのnicknameカラムを呼び出している。(投稿者のニックネーム) -->
                     </h3>
                     <p class="text-small">
                       <span class="rating-star"><i class="star-actived rate-[ここに評価を表示]0"></i></span>
                     </p>
                     <p>
-                      面白い！
+                      <%= review.review %>
+                      <!-- reviewカラムのreviewカラムを呼び出している。
+                      (レビューの中身)-->
                     </p>
                   </div>
                 </li>
+                <% end %>
+                <!-- 閉じタグ -->
               </ul>
             </div>
           </article>
