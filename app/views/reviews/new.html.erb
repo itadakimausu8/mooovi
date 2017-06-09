@@ -34,6 +34,56 @@
               </ul>
             </div>
           </div>
+                    <%= form_for [@product, @review] do |f| %>
+                    <!-- form_forメソッドはフォーム画面を作るために使うメソッドである。
+                    form_forにモデルインスタンスが２つ以上入るとき配列で囲む。
+                    今回はネストを使っている(routes.rb)ので囲んでいるものから順にモデルインスタンスを記述する。
+                    #配列の最後に入っている要素(@review)のモデルインスタンスにフォームの内容(レビュー)を入れる。
+                    #他の配列の要素(@product)にはそのフォームの内容(レビュー)がどのコントローラー(映画)なのか判別できるようにidを記述する。(product_id(映画のidなど)
+                    #htmlで表すと
+                    #<form class="new_review" id="new_review" action="/products/1(product_idのこと)/reviews" accept-charset="UTF-8" method="post">
+                    # </form>
+                                         -->
+          <div style="margin: 8px 0">
+            <%= f.label :nickname, style: { 'margin-right' => 8 } %>
+            <!-- f.labelでlabelのlabelタグを表示できる。
+            htmlで表すと
+            <label style="{&quot;margin-right&quot;=>8}" for="review_nickname">Nickname</label>-->
+
+            <%= f.text_field :nickname, placeholder: 'nickname', value: '' %>
+            <!-- text_fieldはtextのinputタグを表示できる。
+       htmlで表すと
+        <input placeholder="nickname" value="" type="text" name="review[nickname]" id="review_nickname"> -->
+          </div>
+          <div style="margin: 8px 0">
+            <%= f.label :評価, style: { 'margin-right' => 8 } %>
+            <!-- f.labelでlabelのlabelタグを表示できる。
+            htmlで表すと
+            <label style="{&quot;margin-right&quot;=>8}" for="review_評価">評価</label> -->
+            <%= f.number_field :rate, placeholder: '評価', value: 1, max: 10, min: 1, html: { class: "search__query", style: 'text-align: right;' } %>
+            <!-- numberのinputタグを表示できる。
+                 htmlで表すと
+                 <input placeholder="評価" value="1" max="10" min="1" html="{:class=>&quot;search__query&quot;, :style=>&quot;text-align: right;&quot;}" type="number" name="review[rate]" id="review_rate"> -->
+          </div>
+          <div style="margin: 8px 0">
+            <%= f.text_area :review, placeholder: 'レビューを書いてね！', style: 'width: 100%;height: 300px;' %>
+            <!-- textのinputタグを表示できる。
+            htmlで表すと
+            <textarea placeholder="レビューを書いてね！"  name="review[review]" id="review_review"></textarea> -->
+          </div>
+          <div class="row">
+            <div class="col10 push1">
+              <%= button_tag type: "submit", class: "btn btn--block" do %>
+              投稿する<i class="icon-arrow-right"></i>
+              <!-- button_tagメソッドはその名の通りボタンを生成するために使うヘルパーメソッドである。
+              htmlで表すと
+              <button name="button" type="submit" class="btn btn--block">
+              投稿する<i class="icon-arrow-right"></i>
+              </button> -->
+              <% end %>
+            </div>
+          </div>
+          <% end %>
         </article>
       </div>
       <div id="yjSub">
