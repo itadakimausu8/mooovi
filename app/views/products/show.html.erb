@@ -34,7 +34,8 @@
                       <!-- review.nicknameはreviewモデルのnicknameカラムを呼び出している。(投稿者のニックネーム) -->
                     </h3>
                     <p class="text-small">
-                      <span class="rating-star"><i class="star-actived rate-[ここに評価を表示]0"></i></span>
+                      <span class="rating-star"><i class="star-actived rate-<%= review.rate %>0"></i></span>
+                      <!-- reveiw.rateでreveiwsテーブルのrateカラムからレビューの値を呼び出す。値はhtmlより星マークになって表示される。 -->
                     </p>
                     <p>
                       <%= review.review %>

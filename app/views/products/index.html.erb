@@ -20,9 +20,23 @@
                         <!-- eachメソッドよりproductsデーブルから取り出したtitleカラムの中身を出力する。 -->
                       </h3>
                       <p class="text-small">
+                      <% if product.reviews.present? %>
+                        <!-- presentはもしレシーバの中身が存在しているならtrue
+                        存在していなければfalseを返すメソッドである。
+                        上記の場合だとproduct.reviews(対応した映画にレビューがもし存在しているならtrue,存在していないならfalseを返す。
+                        ) -->
                         <span class="rating-star">
-                          <i class="star-actived rate-[ここに評価を表示]0"></i>
+                          <i class="star-actived rate-<%= product.review_average %>0"></i>
+                          <!-- review_averageメソッド(product.rb)を呼び出している。
+                          上記の場合だとproduct.reviews(対応した映画のレビュー)のrateカラムの値の平均を出しその値を四捨五入している。
+                          そしてhtmlで星マークとして表示している。 -->
                         </span>
+                      <% else %>
+                      <!-- もし対応する映画にレビューが書いていなかったとき -->
+                        <span class="rating-star">
+                        <i class="star-actived rate-0"></i>
+                        </span>
+                      <% end %>
                       </p>
                     </div>
                   </li>
