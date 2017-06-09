@@ -32,20 +32,28 @@
               <i class="icon-crown color-gray-light"></i>投稿ランキング
             </h4>
             <ul class="listview listview--condensed text-small">
-              <% [].each.with_index(1) do |product, i| %>
+              <% @ranking.each.with_index(1) do |product, i| %>
+              <!-- with_indexメソッドはインデックスの最初の値を指定することができる。
+              ↑の場合だと、まずeachメソッドより配列の要素がproductに代入される。
+              それと同時にwith_indexによってiに数値が与えられる。
+              要素が一つ一つ入るたびにiの値は+1ずつ大きくなっていく。
+               -->
               <li data-cinema-id="346394">
                 <a href="/products/<%= product.id %>">
                   <div class="box">
                     <div class="box__cell w40 align-center">
                       <p class="label bgcolor-gray-lighter align-center">
                         <%= i %>
+                      <!-- ランキング番号 -->
                       </p>
                     </div>
                     <div class="box__cell pl1em">
                       <p class="text-xsmall no-space">
                         <%= product.title %>
+                      <!-- 対応した映画のタイトル -->
                       </p>
                       <img src="<%= product.image_url %>" alt="">
+                      <!-- 対応した映画の -->
                     </div>
                   </div>
                 </a>
