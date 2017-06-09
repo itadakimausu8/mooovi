@@ -14,7 +14,7 @@
                 <img src="<%= @product.image_url %>" alt="<%= @product.title %>">
               </p>
               <div style="text-align: right">
-                <a href="/products/<%= @product.id %>/reviews/new">この作品を投稿する</a>
+                <%= link_to "この作品を投稿する","/products/#{@product.id}/reviews/new" %>
                 <!-- @product.idでクリックした映画のidを呼び出している。
                 aタグによってレビューの投稿画面へ飛ぶリンクになっている。 -->
               </div>

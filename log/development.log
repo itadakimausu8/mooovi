@@ -4548,3 +4548,87 @@ Processing by ProductsController#show as HTML
   [1m[35mReview Load (0.3ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 1
   Rendered products/show.html.erb within layouts/review_site (97.5ms)
 Completed 200 OK in 241ms (Views: 239.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products/1" for 10.0.2.2 at 2017-06-09 01:39:41 +0000
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 1
+  Rendered products/show.html.erb within layouts/review_site (2.3ms)
+Completed 200 OK in 128ms (Views: 126.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 10.0.2.2 at 2017-06-09 01:39:42 +0000
+
+
+Started GET "/assets/ranking.css?body=1" for 10.0.2.2 at 2017-06-09 01:39:42 +0000
+
+
+Started GET "/assets/review_site.css?body=1" for 10.0.2.2 at 2017-06-09 01:39:42 +0000
+
+
+Started GET "/assets/reviews.css?body=1" for 10.0.2.2 at 2017-06-09 01:39:42 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 10.0.2.2 at 2017-06-09 01:39:42 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 10.0.2.2 at 2017-06-09 01:39:42 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 10.0.2.2 at 2017-06-09 01:39:43 +0000
+
+
+Started GET "/assets/ranking.js?body=1" for 10.0.2.2 at 2017-06-09 01:39:43 +0000
+
+
+Started GET "/assets/reviews.js?body=1" for 10.0.2.2 at 2017-06-09 01:39:43 +0000
+
+
+Started GET "/assets/application.js?body=1" for 10.0.2.2 at 2017-06-09 01:39:43 +0000
+
+
+Started GET "/assets/bambi-1.0.0.ttf?20140712" for 10.0.2.2 at 2017-06-09 01:39:43 +0000
+
+
+Started GET "/products/1" for 10.0.2.2 at 2017-06-09 01:40:30 +0000
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1[0m
+  [1m[35mReview Load (0.4ms)[0m  SELECT `reviews`.* FROM `reviews` WHERE `reviews`.`product_id` = 1
+  Rendered products/show.html.erb within layouts/review_site (3.1ms)
+Completed 200 OK in 212ms (Views: 208.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 10.0.2.2 at 2017-06-09 01:40:31 +0000
+
+
+Started GET "/assets/reviews.css?body=1" for 10.0.2.2 at 2017-06-09 01:40:31 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 10.0.2.2 at 2017-06-09 01:40:31 +0000
+
+
+Started GET "/assets/ranking.css?body=1" for 10.0.2.2 at 2017-06-09 01:40:31 +0000
+
+
+Started GET "/assets/application.css?body=1" for 10.0.2.2 at 2017-06-09 01:40:31 +0000
+
+
+Started GET "/assets/review_site.css?body=1" for 10.0.2.2 at 2017-06-09 01:40:31 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 10.0.2.2 at 2017-06-09 01:40:31 +0000
+
+
+Started GET "/assets/ranking.js?body=1" for 10.0.2.2 at 2017-06-09 01:40:31 +0000
+
+
+Started GET "/assets/reviews.js?body=1" for 10.0.2.2 at 2017-06-09 01:40:31 +0000
+
+
+Started GET "/assets/application.js?body=1" for 10.0.2.2 at 2017-06-09 01:40:31 +0000
+
+
+Started GET "/assets/bambi-1.0.0.ttf?20140712" for 10.0.2.2 at 2017-06-09 01:40:32 +0000
