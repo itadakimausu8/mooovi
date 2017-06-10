@@ -1,4 +1,5 @@
 TechReviewSite::Application.routes.draw do
+  devise_for :users
   #ルーティングを設定するファイル
   resources :products, only: :show do
   #resourcesメソッドによってproductsコントローラーの７つのルーティングを記述。
@@ -7,9 +8,10 @@ TechReviewSite::Application.routes.draw do
   #resourcesメソッドによってreviewsコントローラーの７つのルーティングを記述。
   #onlyオプションによって７つの内のnew,createアクションのルーティングだけを記述する。
     collection do
-      #collectionメソッドは７つのアクション以外のルーティングを設定したいときに使う。
       get 'search'
     end
+      #collectionメソッドは７つのアクション以外のルーティングを設定したいときに使う。
+
   end
   #resoucesメソッドのルーティングのネストがされている。
   #今回の場合、レビューをするときに(reviewsコントローラー)そのレビューがどの映画(productsコントローラー)に対応しているかを判別するために使う。
