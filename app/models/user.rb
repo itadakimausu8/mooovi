@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+ has_many :reviews
+ #アソシエーションを定義する。一(user)対多(review)
+ #つまり投稿者と投稿者が書いたがたレビューの関係
  has_attached_file :avatar,
  styles:  { medium: "300x300#", thumb: "100x100#" }
  #has_attached_fileは画像のカラムのサイズやデフォルト画像、ファイルの保存先を設定できる。

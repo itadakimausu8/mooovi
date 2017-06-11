@@ -18,10 +18,17 @@
               <li class="logo" style="float: left">
                 <a href="/">mooovi</a>
               </li>
-              <li class="entry_button" style="float: right">
-                  <%= link_to 'サインアウト', "/users/sign_out", method: :delete %>
-                  <!-- link_toメソッドよりサインアウトのリンクを作成 -->
-              </li>
+              <% if user_signed_in? %>
+              <!-- user_signed_in?はログインしていたらtrue,していなかったらfalseを返す。 -->
+                <li class="entry_button" style="float: right">
+                  <%= link_to "サインアウト", destroy_user_session_path, method: :delete %>
+                    <!-- link_toメソッドよりサインアウトのリンクを作成 -->
+                </li>
+                <li class="entry_button" style="float: right">
+                  <a href="/users/<%= current_user.id %>">マイページ</a>
+                  <!-- aタグよりマイページのリンクを作成s -->
+                </li>
+              <% end %>
               <li class="entry_button" style="float: right">
                 <a href="/products/search">投稿する</a>
               </li>

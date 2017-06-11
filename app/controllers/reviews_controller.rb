@@ -16,13 +16,15 @@ class ReviewsController < RankingController
   private
   def create_params
     #ストロングパラメーターの作成
-     params.require(:review).permit(:nickname, :rate, :review).merge(product_id: params[:product_id])
+     params.require(:review).permit(:rate, :review).merge(product_id: params[:product_id],user_id: current_user.id)
      #permitメソッドよりストロングパラメーターを作成。
-     #指定されたカラムはnickname,rate,reviewである。
+     #指定されたカラムはrate,reviewである。
      #requireメソッドはform_forから送られてきたパラメーターを取得するために使う。
      #form_forによって送られたパラメーターの中身はモデル名をキーとしたハッシュ値に包まれている。(params = {:モデル名{paramsの中身}})
      #requireメソッドではそのモデル名のキーを引数として中身を取り出すことができる。
      #mergeメソッド二つのハッシュ値を統合するときに使う。
-     #上記の場合だと{:nickname=>"aa", :rate=>3, :review=>"aaaa",:product_id=>"1}のように統合される。
+     #user_idカラムはcurrent_userを使って値を呼び出し保存する。
+     #user_idカラムはアソシエーションに利用される。
+     #上記の場合だと{:rate=>3, :review=>"aaaa",:product_id=>"1,nickname=> taro}のように統合される。
   end
 end

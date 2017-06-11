@@ -44,17 +44,7 @@
                     #<form class="new_review" id="new_review" action="/products/1(product_idのこと)/reviews" accept-charset="UTF-8" method="post">
                     # </form>
                                          -->
-          <div style="margin: 8px 0">
-            <%= f.label :nickname, style: { 'margin-right' => 8 } %>
-            <!-- f.labelでlabelのlabelタグを表示できる。
-            htmlで表すと
-            <label style="{&quot;margin-right&quot;=>8}" for="review_nickname">Nickname</label>-->
 
-            <%= f.text_field :nickname, placeholder: 'nickname', value: '' %>
-            <!-- text_fieldはtextのinputタグを表示できる。
-       htmlで表すと
-        <input placeholder="nickname" value="" type="text" name="review[nickname]" id="review_nickname"> -->
-          </div>
           <div style="margin: 8px 0">
             <%= f.label :評価, style: { 'margin-right' => 8 } %>
             <!-- f.labelでlabelのlabelタグを表示できる。
@@ -75,11 +65,7 @@
             <div class="col10 push1">
               <%= button_tag type: "submit", class: "btn btn--block" do %>
               投稿する<i class="icon-arrow-right"></i>
-              <!-- button_tagメソッドはその名の通りボタンを生成するために使うヘルパーメソッドである。
-              htmlで表すと
-              <button name="button" type="submit" class="btn btn--block">
-              投稿する<i class="icon-arrow-right"></i>
-              </button> -->
+              <!-- button_tagメソッドはその名の通りボタンを生成するために使うヘルパーメソッドである。-->
               <% end %>
             </div>
           </div>
