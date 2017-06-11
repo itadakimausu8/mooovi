@@ -29,9 +29,9 @@
               この配列にeachメソッドをかけて要素を一つ一つ取り出す。 -->
                 <li style="border-bottom: dotted 1px">
                   <div class="thumbnail__caption">
-                    <h3 class="text-xsmall text-overflow" title="<%= review.nickname%>">
-                      </span><%= review.nickname%><small 2014=""></small>
-                      <!-- review.nicknameはreviewモデルのnicknameカラムを呼び出している。(投稿者のニックネーム) -->
+                    <h3 class="text-xsmall text-overflow" title="<%= review.user.nickname %>">
+                      <span><i class="icon-rate-60 text-xxsmall opacity-60" title=""></i></span><%= review.user.nickname %><small 2014=""></small>
+                      <!-- review.user.nicknameはアソシエーションよりreviewモデルに対応したuserモデルのnicknameカラムを呼び出している。(投稿者のニックネーム) -->
                     </h3>
                     <p class="text-small">
                       <span class="rating-star"><i class="star-actived rate-<%= review.rate %>0"></i></span>

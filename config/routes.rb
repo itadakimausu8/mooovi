@@ -1,6 +1,9 @@
 TechReviewSite::Application.routes.draw do
   devise_for :users
   #ルーティングを設定するファイル
+  resources :users, only: :show
+  #resourcesメソッドによってproductsコントローラーの７つのルーティングを記述。
+  #onlyオプションによって７つの内のshowのルーティングだけを記述する。
   resources :products, only: :show do
   #resourcesメソッドによってproductsコントローラーの７つのルーティングを記述。
   #onlyオプションによって７つの内のshowのルーティングだけを記述する。
