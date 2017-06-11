@@ -10,10 +10,10 @@ class RankingController < ApplicationController
   #上記の場合、productsコントローラー、もしくはreviewsコントローラーのアクションが動くとき、動かす前にrankingメソッドの処理を行うという意味。
   def ranking
       product_ids = Review.group(:product_id).order('count_product_id DESC').limit(5).count(:product_id).keys
-      #groupメソッドはレシーバのモデルクラスにある引数のカラムの値が同じレコードをまとめることができる。
-      #orderメソッドは順番の並び替えをすることができる。
-      #countメソッドは配列などの要素数を返すことができる。
-      #keysメソッドはハッシュのキーを取り出して配列として返すことができるメソッド。
+      #groupメソッドはAcitveRecord::Relationクラスに定義されているメソッドである。レシーバのモデルクラスにある引数のカラムの値が同じレコードをまとめることができる。
+      #orderメソッドはAcitveRecord::Relationクラスに定義されているメソッドである。順番の並び替えをすることができる。
+      #countメソッドはAcitveRecord::Relationクラスに定義されているメソッドである。配列などの要素数を返すことができる。
+      #keysメソッドはrubyの標準メソッドである。ハッシュのキーを取り出して配列として返すことができるメソッド。
       #したがって上記の場合だとまずgroupメソッドよりproduct_idカラムの値が同じレコードのまとまりを作る。
       #次にorderメソッドでまとまりの数が多い順に並び替えlimitメソッドでベスト５だけを残す。
       #countメソッドでproduct_idカラムの値をキー、そして対応したカラムのレコードの数をバリューとするハッシュを生成する。{product_id => 同じproduct_idを持つレコードの数}

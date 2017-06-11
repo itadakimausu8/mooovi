@@ -44,3 +44,9 @@ end
 # pry
 gem 'pry-rails'
 gem 'mechanize' #スクレイピングを実装を簡単にできるようにするために使うgem
+gem 'devise' #ログイン機能を簡単に実装することができるgem
+#bundle installで取り込み
+#rails g devise:installでdeviseの設定ファイルを作成。
+#rails g devise:viewでviewファイルを作成。
+gem 'paperclip'
+#画像のアップロード機能を実装することができる。

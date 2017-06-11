@@ -1,4 +1,12 @@
 class ProductsController < RankingController
+  before_action :authenticate_user!, only: :search
+  #before_actionはこのコントローラーがアクションをする前に処理を挟むことができる。
+  #オプションはonlyなのでsaerchアクションは除く。他にifやexceptがある。
+  #↑の場合だと「searchアクションが処理する前に:authenticate_user!を動かせ」
+  #という意味になる。
+  #authenticate_user!はdeviseをインストールすることで使えるメソッド。
+  #ログイン画面とサインアップ画面を自動で用意してくれる。
+
   def index
     @products = Product.order("id ASC").limit(20)
     # orderメソッドでidが若い順(昇順)に並び替える。
